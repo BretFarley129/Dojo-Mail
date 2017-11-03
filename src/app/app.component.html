@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        </style>
+</head>
+<div style="text-align:center">
+  <h1>
+    Welcome to the thing!
+  </h1>
+  
+</div>
+
+<h1>DOJO MAIL:</h1>
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Importance</th>
+    <th>Subject</th>
+    <th>Content</th>
+  </tr>
+  <tr *ngFor = 'let i of info'>
+      <td>{{i.email | lowercase}}</td>
+      <td *ngIf='i.important'>High</td>
+      <td *ngIf='!i.important'>Low</td>
+      <td>{{i.subject}}</td>
+      <td>{{i.content}}</td>
+  </tr>
+</table>
+
